@@ -8,8 +8,9 @@ namespace MachiKoro
         {
             Console.WriteLine("How many players?");
             int numberOfPlayer = Convert.ToInt32(Console.ReadLine());
-
+           
             Console.WriteLine("did you say " + numberOfPlayer + " players?");
+            Console.WriteLine("What's the name of the first player?");
             Console.ReadKey();
         }
 
