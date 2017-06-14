@@ -6,10 +6,10 @@ namespace MachiKoro
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How many players?");
+            Console.WriteLine("How many players are there?");
             int numberOfPlayer = Convert.ToInt32(Console.ReadLine());
            
-            Console.WriteLine("did you say " + numberOfPlayer + " players?");
+            Console.WriteLine("Did you say " + numberOfPlayer + " players?");
             Console.WriteLine("What's the name of the first player:P?");
             Console.ReadKey();
         }
