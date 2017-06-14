@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace MachiKoro
 {
@@ -10,7 +10,7 @@ namespace MachiKoro
             int numberOfPlayer = Convert.ToInt32(Console.ReadLine());
            
             Console.WriteLine("did you say " + numberOfPlayer + " players?");
-            Console.WriteLine("What's the name of the first player?");
+            Console.WriteLine("What's the name of the first player:P?");
             Console.ReadKey();
         }
 
