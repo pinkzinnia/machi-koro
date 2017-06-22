@@ -6,7 +6,7 @@ namespace MachiKoro
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How many players are there?");
+            Console.WriteLine("How many players are there:P?");
             int numberOfPlayer = Convert.ToInt32(Console.ReadLine());
            
             Console.WriteLine("Did you say " + numberOfPlayer + " players?");
