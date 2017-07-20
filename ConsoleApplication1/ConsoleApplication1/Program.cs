@@ -23,13 +23,9 @@ namespace MachiKoro
 			
 		
 			
+			Game game1 = new Game(playernames);
+			Console.ReadKey();
 			
-			//Console.WriteLine("How many players are there:P?");
-            int numberOfPlayer = Convert.ToInt32(Console.ReadLine());
-           
-            Console.WriteLine("Did you say " + numberOfPlayer + " players?");
-            Console.WriteLine("What's the name of the first player:P?");
-            Console.ReadKey();
         }
 
         static void function1()
