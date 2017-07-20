@@ -1,12 +1,30 @@
 using System;
-
+using System.Collections.Generic;
+using System.Drawing;
 namespace MachiKoro
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How many players are there:P?");
+           
+			List<string> playernames=new List<string>(); 
+			Console.WriteLine("Who are the players?");
+			string input;
+			input= Console.ReadLine();
+			
+			while(!string.IsNullOrEmpty(input))
+			{playernames.Add(input);
+			input=Console.ReadLine();
+			}
+			Console.WriteLine("There are " + playernames.Count + " players;");
+			foreach(string s in playernames) {
+				Console.Write(s + "; ");}
+			
+		
+			
+			
+			//Console.WriteLine("How many players are there:P?");
             int numberOfPlayer = Convert.ToInt32(Console.ReadLine());
            
             Console.WriteLine("Did you say " + numberOfPlayer + " players?");
@@ -16,7 +34,6 @@ namespace MachiKoro
 
         static void function1()
         {
-            Console.ForegroundColor = ConsoleColor.White;
             function2();
             Console.WriteLine("Hello");
         }
