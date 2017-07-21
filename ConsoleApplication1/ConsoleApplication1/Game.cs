@@ -26,14 +26,25 @@ namespace MachiKoro
 			{
 				Console.WriteLine("");
 				Console.WriteLine("");
-				Console.WriteLine("Player" + index);
-				if(index == currentPlayerIndex)
-					Console.WriteLine(Players[index].Name + " is the current player");
+				
+				if(index == currentPlayerIndex) // highlight the current player's profile
+				{
+					Console.BackgroundColor = ConsoleColor.White; 
+					Console.ForegroundColor = ConsoleColor.Black; 
+				}
+						
 				Players[index].Print();
+				
+				Console.BackgroundColor= ConsoleColor.Black; // change back to the default background color for other players
+				Console.ForegroundColor = ConsoleColor.White; // change back to the default foreground color for other players
 			}
         }
         public List<Player> Players { get; set; }
         public int CurentPlayerIndex { get; set; }
+		
+		private void DisplayPlayersProfile()
+		{
+		}
 
     }
 }
