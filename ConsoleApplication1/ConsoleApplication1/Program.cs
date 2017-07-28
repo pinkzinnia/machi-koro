@@ -24,6 +24,9 @@ namespace MachiKoro
 		
 			
 			Game game1 = new Game(playernames);
+			game1.Play();
+			
+			
 			Console.ReadKey();
 			
         }

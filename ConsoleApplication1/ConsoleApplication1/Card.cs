@@ -39,7 +39,7 @@ namespace MachiKoro
 	{
 		public BlueCard()
 		{
-			FaceColor= ConsoleColor.Blue;
+			FaceColor= ConsoleColor.Cyan;
 		}
 	}
 	public class RedCard:Card
@@ -49,11 +49,11 @@ namespace MachiKoro
 			FaceColor= ConsoleColor.Red;
 		}
 	}
-	public class YellowCard:Card
+	public class PurpleCard:Card
 	{
-		public YellowCard()
+		public PurpleCard()
 		{
-			FaceColor= ConsoleColor.Yellow;
+			FaceColor= ConsoleColor.Magenta;
 		}
 	}
 	public class BakeryCard:GreenCard
