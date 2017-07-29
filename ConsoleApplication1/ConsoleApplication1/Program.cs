@@ -14,18 +14,24 @@ namespace MachiKoro
 			input= Console.ReadLine();
 			
 			while(!string.IsNullOrEmpty(input))
-			{playernames.Add(input);
-			input=Console.ReadLine();
+			{
+				playernames.Add(input);
+				input=Console.ReadLine();
 			}
+			/*
 			Console.WriteLine("There are " + playernames.Count + " players;");
 			foreach(string s in playernames) {
 				Console.Write(s + "; ");}
-			
-		
-			
-			Game game1 = new Game(playernames);
-			game1.Play();
-			
+			*/
+			Game game = new Game(playernames);
+			do{
+				
+				game.ResetGame();
+				game.Play();
+				
+				Console.WriteLine("Do you want to play another game?");
+			}
+			while(Console.ReadLine().ToLower() == "yes" );
 			
 			Console.ReadKey();
 			

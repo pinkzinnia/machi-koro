@@ -8,72 +8,150 @@ namespace MachiKoro
 {
    public class Game
     {
-		int currentPlayerIndex ;
+		int currentPlayerIndex {get { return round % 3; }}
+		int round;
+		List<string> PlayerNames; 
         public Game (List<string> playerNames)
         {
-			int currentPlayerIndex = 0;
-           ResetGame(playerNames);
+			PlayerNames = playerNames;
+		
         }
 		
 		public void Play()
 		{
 			
-			int diceNumber = Convert.ToInt32(Console.ReadLine());
-			foreach(var player in Players)
+			do 
 			{
-				foreach(Card card in player.Cards)
+				Console.WriteLine(); // add a blank line
+				
+				CurrentPlayerRoleADice();
+				
+				CurrentPlayerBuyACard();
+				
+				round = round +1;
+								
+				DisplayPlayer();
+				
+				Console.WriteLine(); // add a blank line
+			}
+			while(Players[currentPlayerIndex].LandmarkCount<7);
+			Console.WriteLine(Players[currentPlayerIndex] +" won!");
+		}
+		
+		private void CurrentPlayerRoleADice()
+		{
+			int diceNumber = 0;
+			do{
+				Console.WriteLine(Players[currentPlayerIndex].Name + ", please roll the dice, and type in the dice number");
+			
+				if(!Int32.TryParse(Console.ReadLine(),out diceNumber))
+					Console.WriteLine("it's not a number!");	
+				
+				if((Players[currentPlayerIndex].CanRole2Dices && diceNumber>12)
+					||
+					(!Players[currentPlayerIndex].CanRole2Dices && diceNumber>6)
+					)
 				{
-					if(card is BlueCard && card.MatchNum.Contains(diceNumber))
-					{
-						card.PayRule();
-					}
+					Console.WriteLine("Cheater, you can't have rolled this number!");	
+					diceNumber= 0;
 				}
 			}
+			while(diceNumber ==0);
+				//blue
+				foreach(Player player in Players)
+				{
+					foreach(Card card in player.Cards)
+					{
+						if(card is BlueCard && card.MatchNum.Contains(diceNumber))
+						{
+							Console.WriteLine(player.Name + " has a " + card.GetType().ToString());
+							card.PayRule(Players[currentPlayerIndex],player);
+						}
+					}
+				}
 			
-			//green
-			
+				//green
 				foreach(Card card in Players[currentPlayerIndex].Cards)
 				{
 					if(card is GreenCard && card.MatchNum.Contains(diceNumber))
 					{
-						card.PayRule();
+						Console.WriteLine(Players[currentPlayerIndex].Name + " has a " + card.GetType().ToString());
+						card.PayRule(Players[currentPlayerIndex],Players[currentPlayerIndex]);
 					}
 				}
 			
-			//red
-			foreach(var player in Players)
-			{
-				if(player != Players[currentPlayerIndex])
+				//red
+				foreach(var player in Players)
 				{
-				foreach(Card card in player.Cards)
-				{
-					if(card is BlueCard && card.MatchNum.Contains(diceNumber))
+					if(player != Players[currentPlayerIndex])
 					{
-						card.PayRule();
+					foreach(Card card in player.Cards)
+					{
+						if(card is RedCard && card.MatchNum.Contains(diceNumber))
+						{
+							Console.WriteLine(player.Name + " has a " + card.GetType().ToString());
+							card.PayRule(Players[currentPlayerIndex],player);
+						}
+					}
 					}
 				}
-				}
-			}
-			//purple
+				
+				//purple
 				foreach(Card card in Players[currentPlayerIndex].Cards)
 				{
 					if(card is PurpleCard && card.MatchNum.Contains(diceNumber))
 					{
-						card.PayRule();
+						Console.WriteLine(Players[currentPlayerIndex].Name + " has a " + card.GetType().ToString());
+						card.PayRule(Players[currentPlayerIndex],Players[currentPlayerIndex]);
 					}
 				}
-				
-				Console.WriteLine("Which card do you want to buy?");
-				string cardtype = Console.ReadLine();
-				
-				
 		}
 		
-		private void ResetGame(List<string> playerNames)
+		private void CurrentPlayerBuyACard()
 		{
+			Card cardPicked;
+			Card cardToBuy = null;
+			
+			do
+			{
+				Type CardType;
+				do
+				{
+					Console.WriteLine(Players[currentPlayerIndex].Name + " please type in the card name that you want to buy:");
+					string cardtype = Console.ReadLine();
+					CardType = Type.GetType("MachiKoro."+ cardtype);
+					
+					if(CardType ==null)
+						Console.WriteLine(cardtype + " is not a valid card.");
+				}
+				while (CardType ==null);
+				
+				var firstConstructor = CardType.GetConstructors()[0];
+					
+				cardPicked = (Card)(Activator.CreateInstance(CardType));
+				if(Players[currentPlayerIndex].Money >= cardPicked.Cost)
+				{
+					cardToBuy = cardPicked;
+					
+				}
+				else
+				{
+					Console.WriteLine("You don't have enough money to buy this card");
+				}
+			}
+			while(cardToBuy ==null);
+				
+			Players[currentPlayerIndex].Money = Players[currentPlayerIndex].Money - cardToBuy.Cost;
+			Players[currentPlayerIndex].Cards.Add(cardToBuy);
+				
+		}
+		public void ResetGame()
+		{
+			
+			round = 0;
 			Players = new List<Player>();
 			Player onePlayer;
-			foreach(string playerName in playerNames)
+			foreach(string playerName in PlayerNames)
 			{
 				onePlayer = new Player(playerName);
 				Players.Add(onePlayer);
@@ -83,7 +161,7 @@ namespace MachiKoro
 			
 			DisplayPlayer();
 		}
-		public void DisplayPlayer()
+		private void DisplayPlayer()
 		{
 			for(int index = 0; index<Players.Count; index ++)
 			{

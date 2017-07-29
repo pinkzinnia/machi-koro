@@ -10,20 +10,20 @@ namespace MachiKoro
     public enum SymbolType {cup, bread, gear, wheat, cow, boat, tower, apple, factory }
     public  class  Card
     {
-        public string ID { get; set; }
+        public string Name { get; set; }
         public List<int> MatchNum { get; set; }
         public ConsoleColor FaceColor { get; set; }
         public int Cost { get; set; }
 
         public SymbolType Symbol { get; set; }
 
-        public virtual void PayRule(){}
+        public virtual void PayRule(Player currentPlayer, Player cardOwner){Console.WriteLine("no rule created yet.");}
 		
 		public void Print()
 		{
 			ConsoleColor currentFontColor = Console.ForegroundColor; 
 			Console.ForegroundColor=FaceColor;			// change to the card face color before write the card name to the screen
-			Console.Write(this.GetType().ToString().Replace("Card","").Replace("MachiKoro.","") +" ");
+			Console.Write(Name +" ");
 			Console.ForegroundColor=currentFontColor; // change it to the previouse font color
 		}
 		
@@ -56,11 +56,11 @@ namespace MachiKoro
 			FaceColor= ConsoleColor.Magenta;
 		}
 	}
-	public class BakeryCard:GreenCard
+	public class G2:GreenCard
 	{
-		public BakeryCard():base()
+		public G2():base()
 		{
-			ID = "G2";
+			Name = "Bakery";
 			MatchNum = new List<int>();
 			MatchNum.Add(2);
 			MatchNum.Add(3);
@@ -70,15 +70,17 @@ namespace MachiKoro
 			
 			
 		}
-		public override void  PayRule()
-		{}
+		public override void  PayRule(Player currentPlayer, Player cardOwner)
+		{
+			Console.WriteLine("BakeryCard PayRule is missing");
+		}
 		
 	}
-	public class WheatFieldCard:BlueCard
+	public class B1:BlueCard
 	{
-		public WheatFieldCard():base()
+		public B1():base()
 		{
-			ID = "B1";
+			Name = "Wheat Field";
 			MatchNum = new List<int>();
 			MatchNum.Add(1);
 			
@@ -87,8 +89,10 @@ namespace MachiKoro
 			
 			
 		}
-		public override void  PayRule()
-		{}
+		public override void  PayRule(Player currentPlayer, Player cardOwner)
+		{
+			Console.WriteLine("WheatFieldCard PayRule is missing");
+		}
 		
 	}
 

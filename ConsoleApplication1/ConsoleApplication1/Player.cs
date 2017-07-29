@@ -15,8 +15,8 @@ namespace MachiKoro
 			Money = 3;
 			CanRole2Dices = false;
 			Cards = new List<Card>();
-			Cards.Add(new BakeryCard());
-			Cards.Add(new WheatFieldCard());
+			Cards.Add(new B1());
+			Cards.Add(new G2());
 			
 		}
         public string Name { get; set; }

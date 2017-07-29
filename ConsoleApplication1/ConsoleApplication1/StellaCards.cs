@@ -8,11 +8,11 @@ using System.Text;
 
 namespace MachiKoro
 {
-	public class FlowerShopCard:GreenCard
+	public class G6:GreenCard
 	{
-		public FlowerShopCard():base()
+		public G6():base()
 		{
-			ID = "G6";
+			Name = "Flower Shop";
 			MatchNum = new List<int>();
 			MatchNum.Add(6);
 			
@@ -21,11 +21,11 @@ namespace MachiKoro
 		}
 		
 	}
-	public class CheeseFactoryCard:GreenCard
+	public class G7:GreenCard
 	{
-		public CheeseFactoryCard():base()
+		public G7():base()
 		{
-			ID = "G7";
+			Name = "Cheese Factory";
 			MatchNum = new List<int>();
 			MatchNum.Add(7);
 			
@@ -33,11 +33,11 @@ namespace MachiKoro
 			Symbol = SymbolType.factory;
 		}
 	}
-	public class FurnitureFactoryCard:GreenCard
+	public class G8:GreenCard
 	{
-		public FurnitureFactoryCard():base()
+		public G8():base()
 		{
-			ID = "G8";
+			Name = "Furniture Factory";
 			MatchNum = new List<int>();
 			MatchNum.Add(8);
 			
@@ -45,11 +45,11 @@ namespace MachiKoro
 			Symbol = SymbolType.factory;
 		}
 	}
-	public class FruitAndVegetableMarketCard:GreenCard
+	public class G11:GreenCard
 	{
-		public FruitAndVegetableMarketCard():base()
+		public G11():base()
 		{
-			ID = "G11";
+			Name = "Fruit And Vegetable Market";
 			MatchNum = new List<int>();
 			MatchNum.Add(11);
 			MatchNum.Add(12);
@@ -57,11 +57,11 @@ namespace MachiKoro
 			Symbol = SymbolType.apple;	
 		}
 	}
-	public class FoodWarehouseCard:GreenCard
+	public class G12:GreenCard
 	{
-		public FoodWarehouseCard():base()
+		public G12():base()
 		{
-			ID = "G12";
+			Name = "Food Warehouse";
 			MatchNum = new List<int>();
 			MatchNum.Add(12);
 			MatchNum.Add(13);
@@ -69,55 +69,55 @@ namespace MachiKoro
 			Symbol = SymbolType.factory;	
 		}
 	}
-	public class SushiBarCard:RedCard
+	public class R1:RedCard
 	{
-		public SushiBarCard():base()
+		public R1():base()
 		{
-			ID = "R1";
+			Name = "Sushi Bar";
 			MatchNum = new List<int>();
 			MatchNum.Add(1);
 			Cost = 4;
 			Symbol = SymbolType.cup;	
 		}
 	}
-	public class CafeCard:RedCard
+	public class R3:RedCard
 	{
-		public CafeCard():base()
+		public R3():base()
 		{
-			ID = "R3";
+			Name = "Cafe";
 			MatchNum = new List<int>();
 			MatchNum.Add(3);
 			Cost = 2;
 			Symbol = SymbolType.cup;	
 		}
 	}	
-	public class PizzaJointCard:RedCard
+	public class R7:RedCard
 	{
-		public PizzaJointCard():base()
+		public R7():base()
 		{
-			ID = "R7";
+			Name = "Pizza Joint";
 			MatchNum = new List<int>();
 			MatchNum.Add(7);
 			Cost = 1;
 			Symbol = SymbolType.cup;	
 		}
 	}		
-	public class HamburgerStandCard:RedCard
+	public class R8:RedCard
 	{
-		public HamburgerStandCard():base()
+		public R8():base()
 		{
-			ID = "R8";
+			Name = "Hamburger Stand";
 			MatchNum = new List<int>();
 			MatchNum.Add(8);
 			Cost = 1;
 			Symbol = SymbolType.cup;	
 		}
 	}			
-	public class FamilyRestaurantCard:RedCard
+	public class R9:RedCard
 	{
-		public FamilyRestaurantCard():base()
+		public R9():base()
 		{
-			ID = "R9";
+			Name = "Family Restaurant";
 			MatchNum = new List<int>();
 			MatchNum.Add(9);
 			MatchNum.Add(10);
