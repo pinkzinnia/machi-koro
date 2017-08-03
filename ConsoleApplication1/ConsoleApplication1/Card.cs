@@ -28,72 +28,11 @@ namespace MachiKoro
 		}
 		
     }
-	public class GreenCard:Card
-	{
-		public GreenCard()
-		{
-			FaceColor= ConsoleColor.Green;
-		}
-	}
-	public class BlueCard:Card
-	{
-		public BlueCard()
-		{
-			FaceColor= ConsoleColor.Cyan;
-		}
-	}
-	public class RedCard:Card
-	{
-		public RedCard()
-		{
-			FaceColor= ConsoleColor.Red;
-		}
-	}
-	public class PurpleCard:Card
-	{
-		public PurpleCard()
-		{
-			FaceColor= ConsoleColor.Magenta;
-		}
-	}
-	public class G2:GreenCard
-	{
-		public G2():base()
-		{
-			Name = "Bakery";
-			MatchNum = new List<int>();
-			MatchNum.Add(2);
-			MatchNum.Add(3);
-			
-			Cost = 1;
-			Symbol = SymbolType.bread;
-			
-			
-		}
-		public override void  PayRule(Player currentPlayer, Player cardOwner)
-		{
-			Console.WriteLine("BakeryCard PayRule is missing");
-		}
-		
-	}
-	public class B1:BlueCard
-	{
-		public B1():base()
-		{
-			Name = "Wheat Field";
-			MatchNum = new List<int>();
-			MatchNum.Add(1);
-			
-			Cost = 1;
-			Symbol = SymbolType.wheat;
-			
-			
-		}
-		public override void  PayRule(Player currentPlayer, Player cardOwner)
-		{
-			Console.WriteLine("WheatFieldCard PayRule is missing");
-		}
-		
-	}
+	
+	
+	
+	
+	
+
 
 }

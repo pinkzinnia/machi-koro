@@ -17,6 +17,7 @@ namespace MachiKoro
 			Cards = new List<Card>();
 			Cards.Add(new B1());
 			Cards.Add(new G2());
+			Cards.Add(new Y0());
 			
 		}
         public string Name { get; set; }

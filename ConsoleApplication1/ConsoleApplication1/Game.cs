@@ -64,7 +64,7 @@ namespace MachiKoro
 					{
 						if(card is BlueCard && card.MatchNum.Contains(diceNumber))
 						{
-							Console.WriteLine(player.Name + " has a " + card.GetType().ToString());
+							Console.WriteLine(player.Name + " has a " + card.Name);
 							card.PayRule(Players[currentPlayerIndex],player);
 						}
 					}
@@ -75,7 +75,7 @@ namespace MachiKoro
 				{
 					if(card is GreenCard && card.MatchNum.Contains(diceNumber))
 					{
-						Console.WriteLine(Players[currentPlayerIndex].Name + " has a " + card.GetType().ToString());
+						Console.WriteLine(Players[currentPlayerIndex].Name + " has a " + card.Name);
 						card.PayRule(Players[currentPlayerIndex],Players[currentPlayerIndex]);
 					}
 				}
@@ -89,7 +89,7 @@ namespace MachiKoro
 					{
 						if(card is RedCard && card.MatchNum.Contains(diceNumber))
 						{
-							Console.WriteLine(player.Name + " has a " + card.GetType().ToString());
+							Console.WriteLine(player.Name + " has a " + card.Name);
 							card.PayRule(Players[currentPlayerIndex],player);
 						}
 					}
