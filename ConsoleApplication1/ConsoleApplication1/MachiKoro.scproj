@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SnippetProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SelectedIndex>1</SelectedIndex>
+  <SelectedIndex>8</SelectedIndex>
   <Infos>
     <SnippetInfo>
-      <Filename>C:\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\Program.cs</Filename>
+      <Filename>C:\Users\swyk2\Documents\Visual Studio 2015\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\Card.cs</Filename>
     </SnippetInfo>
     <SnippetInfo>
-      <Filename>C:\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\Card.cs</Filename>
+      <Filename>C:\Users\swyk2\Documents\Visual Studio 2015\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\Game.cs</Filename>
     </SnippetInfo>
     <SnippetInfo>
-      <Filename>C:\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\Game.cs</Filename>
+      <Filename>C:\Users\swyk2\Documents\Visual Studio 2015\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\Player.cs</Filename>
     </SnippetInfo>
     <SnippetInfo>
-      <Filename>C:\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\Player.cs</Filename>
+      <Filename>C:\Users\swyk2\Documents\Visual Studio 2015\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\Program.cs</Filename>
+    </SnippetInfo>
+    <SnippetInfo>
+      <Filename>C:\Users\swyk2\Documents\Visual Studio 2015\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\GreenCard.cs</Filename>
+    </SnippetInfo>
+    <SnippetInfo>
+      <Filename>C:\Users\swyk2\Documents\Visual Studio 2015\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\PurpleCard.cs</Filename>
+    </SnippetInfo>
+    <SnippetInfo>
+      <Filename>C:\Users\swyk2\Documents\Visual Studio 2015\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\RedCard.cs</Filename>
+    </SnippetInfo>
+    <SnippetInfo>
+      <Filename>C:\Users\swyk2\Documents\Visual Studio 2015\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\BlueCard.cs</Filename>
+    </SnippetInfo>
+    <SnippetInfo>
+      <Filename>C:\Users\swyk2\Documents\Visual Studio 2015\Projects\machi-koro\ConsoleApplication1\ConsoleApplication1\LandmarkCard.cs</Filename>
     </SnippetInfo>
   </Infos>
   <References>
