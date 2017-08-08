@@ -27,32 +27,33 @@ namespace MachiKoro
 				CurrentPlayerRoleADice();
 				
 				CurrentPlayerBuyACard();
-				
-				round = round +1;
+
+
+                round = round +1;
 								
 				DisplayPlayer();
 				
 				Console.WriteLine(); // add a blank line
 			}
 			while(Players[currentPlayerIndex].LandmarkCount<7);
-			Console.WriteLine(Players[currentPlayerIndex] +" won!");
+            Singleton.reader.Speak(Players[currentPlayerIndex] +" won!");
 		}
 		
 		private void CurrentPlayerRoleADice()
 		{
 			int diceNumber = 0;
 			do{
-				Console.WriteLine(Players[currentPlayerIndex].Name + ", please roll the dice, and type in the dice number");
+                Singleton.reader.Speak(Players[currentPlayerIndex].Name + ", please roll the dice, and type in the dice number");
 			
 				if(!Int32.TryParse(Console.ReadLine(),out diceNumber))
-					Console.WriteLine("it's not a number!");	
+                    Singleton.reader.Speak("it's not a number!");	
 				
 				if((Players[currentPlayerIndex].CanRole2Dices && diceNumber>12)
 					||
 					(!Players[currentPlayerIndex].CanRole2Dices && diceNumber>6)
 					)
 				{
-					Console.WriteLine("Cheater, you can't have rolled this number!");	
+                    Singleton.reader.Speak("Cheater! you can't have rolled this number!");	
 					diceNumber= 0;
 				}
 			}
@@ -64,7 +65,7 @@ namespace MachiKoro
 					{
 						if(card is BlueCard && card.MatchNum.Contains(diceNumber))
 						{
-							Console.WriteLine(player.Name + " has a " + card.Name);
+                            Singleton.reader.Speak(player.Name + " has a " + card.Name);
 							card.PayRule(Players[currentPlayerIndex],player);
 						}
 					}
@@ -75,7 +76,7 @@ namespace MachiKoro
 				{
 					if(card is GreenCard && card.MatchNum.Contains(diceNumber))
 					{
-						Console.WriteLine(Players[currentPlayerIndex].Name + " has a " + card.Name);
+                        Singleton.reader.Speak(Players[currentPlayerIndex].Name + " has a " + card.Name);
 						card.PayRule(Players[currentPlayerIndex],Players[currentPlayerIndex]);
 					}
 				}
@@ -89,7 +90,7 @@ namespace MachiKoro
 					{
 						if(card is RedCard && card.MatchNum.Contains(diceNumber))
 						{
-							Console.WriteLine(player.Name + " has a " + card.Name);
+                            Singleton.reader.Speak(player.Name + " has a " + card.Name);
 							card.PayRule(Players[currentPlayerIndex],player);
 						}
 					}
@@ -101,7 +102,7 @@ namespace MachiKoro
 				{
 					if(card is PurpleCard && card.MatchNum.Contains(diceNumber))
 					{
-						Console.WriteLine(Players[currentPlayerIndex].Name + " has a " + card.GetType().ToString());
+                        Singleton.reader.Speak(Players[currentPlayerIndex].Name + " has a " + card.GetType().ToString());
 						card.PayRule(Players[currentPlayerIndex],Players[currentPlayerIndex]);
 					}
 				}
@@ -117,12 +118,12 @@ namespace MachiKoro
 				Type CardType;
 				do
 				{
-					Console.WriteLine(Players[currentPlayerIndex].Name + " please type in the card name that you want to buy:");
+                    Singleton.reader.Speak(Players[currentPlayerIndex].Name + " please type in the card name that you want to buy:");
 					string cardtype = Console.ReadLine();
 					CardType = Type.GetType("MachiKoro."+ cardtype);
 					
 					if(CardType ==null)
-						Console.WriteLine(cardtype + " is not a valid card.");
+                        Singleton.reader.Speak(cardtype + " is not a valid card.");
 				}
 				while (CardType ==null);
 				
@@ -136,7 +137,7 @@ namespace MachiKoro
 				}
 				else
 				{
-					Console.WriteLine("You don't have enough money to buy this card");
+                    Singleton.reader.Speak(Players[currentPlayerIndex].Name+ ", You don't have enough money to buy this card.");
 				}
 			}
 			while(cardToBuy ==null);
@@ -156,8 +157,8 @@ namespace MachiKoro
 				onePlayer = new Player(playerName);
 				Players.Add(onePlayer);
 			}
-			
-			Console.WriteLine("Let the game start!");
+
+            Singleton.reader.Speak("Let the game start!");
 			
 			DisplayPlayer();
 		}

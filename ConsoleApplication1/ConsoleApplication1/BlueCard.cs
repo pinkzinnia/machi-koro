@@ -15,7 +15,7 @@ namespace MachiKoro
 		}
 	}
 	
-		public class B1:BlueCard
+	public class B1:BlueCard
 	{
 		public B1():base()
 		{
@@ -31,12 +31,12 @@ namespace MachiKoro
 		public override void  PayRule(Player currentPlayer, Player cardOwner)
 		{
 			cardOwner.Money += 1;
-			Console.WriteLine(cardOwner.Name +" got 1 coin from the bank.");
+			Singleton.reader.Speak(cardOwner.Name +" got 1 coin from the bank.");
 		}
 		
 	}
 	
-		public class B2:BlueCard
+	public class B2:BlueCard
 	{
 		public B2():base()
 		{
@@ -46,7 +46,13 @@ namespace MachiKoro
 			Cost = 1;
 			Symbol = SymbolType.cow;
 		}
+		public override void PayRule(Player currentPlayer, Player cardOwner)
+		{
+			cardOwner.Money +=1;
+			Singleton.reader.Speak(cardOwner.Name + "got 1 coin from the bank.");
+		}
 	}
+	
 	public class B4:BlueCard
 	{ 
 		public B4() :base()
@@ -58,7 +64,13 @@ namespace MachiKoro
 			Cost = 2;
 			Symbol = SymbolType.wheat;
 		}
-	}
+			public override void PayRule(Player currentPlayer, Player cardOwner)
+		{	
+			cardOwner.Money +=1;
+			Singleton.reader.Speak(cardOwner.Name + "got 1 coin from the bank.");
+		}
+	}	
+	
 	public class B5:BlueCard
 	{
 		public B5() :base()
@@ -69,7 +81,13 @@ namespace MachiKoro
 			Cost = 3;
 			Symbol = SymbolType.gear;
 		}
+		public override void PayRule(Player currentOwner, Player cardOwner)
+		{
+			cardOwner.Money +=1;
+			Singleton.reader.Speak(cardOwner + "got one coin from the bank.");
+		}
 	}
+	
 	public class B8:BlueCard
 	{
 		public B8() :base()
@@ -80,7 +98,13 @@ namespace MachiKoro
 			Cost = 2;
 			Symbol = SymbolType.boat;
 		}
+		public override void PayRule(Player currentPlayer, Player cardOwner)
+		{
+			cardOwner.Money +=3;
+			Singleton.reader.Speak(cardOwner + "got 3 coins from the bank.");
+		}
 	}
+	
 	public class B9:BlueCard
 	{
 		public B9() :base()
@@ -91,7 +115,13 @@ namespace MachiKoro
 			Cost = 6;
 			Symbol = SymbolType.gear;
 		}
+		public override void PayRule(Player currentPlayer, Player cardOwner)
+		{
+			cardOwner.Money +=5;
+			Singleton.reader.Speak("Yeah! " + cardOwner + "has a mine and earned 5 coins! Go " + cardOwner + "!!!");
+		}	
 	}
+	
 	public class B10:BlueCard
 	{
 		public B10() :base()
@@ -102,8 +132,14 @@ namespace MachiKoro
 			Cost = 3;
 			Symbol = SymbolType.wheat;
 		}
+		public override void PayRule(Player currentPlayer, Player cardOwner)
+		{
+			cardOwner.Money +=3;
+			Singleton.reader.Speak(cardOwner + "got 3 coins.");
+		}
 	}
 	
+	//Wait for Mom to teach...
 	public class B12:BlueCard
 	{
 		public B12() :base()

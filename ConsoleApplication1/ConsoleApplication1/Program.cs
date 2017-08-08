@@ -1,79 +1,59 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Speech.Synthesis;
 namespace MachiKoro
 {
     class Program
     {
         static void Main(string[] args)
         {
+            
+            List<string> playernames = new List<string>();
+            Singleton.reader.Speak("Who are the players?");
+            //Console.WriteLine("Who are the players?");
+            string input;
+            input = Console.ReadLine();
+
+            while (!string.IsNullOrEmpty(input))
+            {
+                playernames.Add(input);
+                input = Console.ReadLine();
+            }
            
-			List<string> playernames=new List<string>(); 
-			Console.WriteLine("Who are the players?");
-			string input;
-			input= Console.ReadLine();
-			
-			while(!string.IsNullOrEmpty(input))
-			{
-				playernames.Add(input);
-				input=Console.ReadLine();
-			}
-			/*
-			Console.WriteLine("There are " + playernames.Count + " players;");
-			foreach(string s in playernames) {
-				Console.Write(s + "; ");}
-			*/
-			Game game = new Game(playernames);
-			do{
-				
-				game.ResetGame();
-				game.Play();
-				
-				Console.WriteLine("Do you want to play another game?");
-			}
-			while(Console.ReadLine().ToLower() == "yes" );
-			
-			Console.ReadKey();
-			
-        }
+            Game game = new Game(playernames);
+            do {
 
-        static void function1()
-        {
-            function2();
-            Console.WriteLine("Hello");
-        }
+                game.ResetGame();
+                game.Play();
 
-        static void function2()
-        {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Hello");
+                Singleton.reader.Speak("Do you want to play another game?");
+            }
+            while (Console.ReadLine().ToLower() == "yes");
+
+            Console.ReadKey();
+
         }
 
     }
 
-    class Person
+    static class Singleton
     {
-        string Name { get; set; }
-        int Age { get; set; }
-        public Person(string name, int age)
+        static SpeechSynthesizer _reader;
+        public static SpeechSynthesizer reader
         {
-            Name = name;
-            Age = age;
-        }
-        public void DisplayName(ConsoleColor color)
-        {
-            Console.ForegroundColor = color;
-            Console.WriteLine("My name is " + Name);
-        }
+            get
+            {
+                if (_reader == null)
+                    _reader = new SpeechSynthesizer();
+                return _reader;
+            }
 
-        public void DisplayAge()
-        {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("I'm " + Age + " years old");
-        }
+            }
 
 
     }
+
 
   
 }

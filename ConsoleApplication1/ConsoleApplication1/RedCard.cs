@@ -25,6 +25,22 @@ namespace MachiKoro
 			Cost = 4;
 			Symbol = SymbolType.cup;	
 		}
+		public override void PayRule(Player currentPlayer, Player cardOwner)
+		{
+			
+			foreach(Card card in cardOwner.Cards)
+			{
+				if(card is Y2)
+				{
+					currentPlayer.Money -=3;
+					cardOwner.Money +=3;
+					 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "3 coins.");
+				}
+					
+			}
+		
+			
+		}
 	}
 	public class R3:RedCard
 	{
@@ -36,18 +52,34 @@ namespace MachiKoro
 			Cost = 2;
 			Symbol = SymbolType.cup;	
 		}
-	}	
+		public override void PayRule(Player currentPlayer, Player cardOwner)
+		{	
+			currentPlayer.Money -= 1;
+			cardOwner.Money += 1;
+			 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
+		}
+	}
+	
 	public class R7:RedCard
 	{
 		public R7():base()
 		{
+			
 			Name = "Pizza Joint";
 			MatchNum = new List<int>();
 			MatchNum.Add(7);
 			Cost = 1;
 			Symbol = SymbolType.cup;	
 		}
-	}		
+		public override void PayRule(Player currentPlayer, Player cardOwner)
+		{
+			currentPlayer.Money -=1;
+			cardOwner.Money +=1;
+			 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
+			
+		}
+	}
+		
 	public class R8:RedCard
 	{
 		public R8():base()
@@ -57,6 +89,12 @@ namespace MachiKoro
 			MatchNum.Add(8);
 			Cost = 1;
 			Symbol = SymbolType.cup;	
+		}
+		public override void PayRule(Player currentPlayer, Player cardOwner)
+		{
+			currentPlayer.Money -=1;
+			cardOwner.Money +=1;
+			 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
 		}
 	}			
 	public class R9:RedCard
@@ -70,5 +108,12 @@ namespace MachiKoro
 			Cost = 3;
 			Symbol = SymbolType.cup;	
 		}
+		public override void PayRule(Player currentPlayer, Player cardOwner)
+		{
+			currentPlayer.Money -=2;
+			cardOwner.Money +=2;
+			 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "2 coins.");
+		}	
+			
 	}	
-}
+		}			
