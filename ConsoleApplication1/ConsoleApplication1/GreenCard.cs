@@ -32,7 +32,7 @@ namespace MachiKoro
 		public override void  PayRule(Player currentPlayer, Player cardOwner)
 		{
 			cardOwner.Money += 1;
-            Singleton.reader.Speak(cardOwner.Name +" got 1 coin from the bank.");
+            Console.WriteLine(cardOwner.Name +" got 1 coin from the bank.");
 		}
 		
 	}
@@ -53,7 +53,7 @@ namespace MachiKoro
 		public override void  PayRule(Player currentPlayer, Player cardOwner)
 		{
 			cardOwner.Money += 3;
-			 Singleton.reader.Speak(cardOwner.Name +" got 3 coins from the bank.");
+			 Console.WriteLine(cardOwner.Name +" got 3 coins from the bank.");
 		}
 		
 	}
@@ -79,7 +79,7 @@ namespace MachiKoro
 					countOfFlowerOrchard +=1;
 			
 				cardOwner.Money += countOfFlowerOrchard;
-			 Singleton.reader.Speak(cardOwner.Name +" got "+countOfFlowerOrchard+" coin(s) from the bank.");
+			 Console.WriteLine(cardOwner.Name +" got "+countOfFlowerOrchard+" coin(s) from the bank.");
 			}
 			
 			
@@ -109,7 +109,7 @@ namespace MachiKoro
 					countOfCows+=1;
 			
 				cardOwner.Money += countOfCows;
-			 Singleton.reader.Speak(cardOwner.Name +" got "+countOfCows+" coin(s) from the bank.");
+			 Console.WriteLine(cardOwner.Name +" got "+countOfCows+" coin(s) from the bank.");
 			}
 			
 		}
@@ -137,7 +137,7 @@ namespace MachiKoro
 					countOfGears +=3;
 			
 				cardOwner.Money += countOfGears;
-			 Singleton.reader.Speak(cardOwner.Name +" got "+countOfGears+" coins from the bank.");
+			 Console.WriteLine(cardOwner.Name +" got "+countOfGears+" coins from the bank.");
 			}
 	}
 	}
@@ -163,7 +163,7 @@ namespace MachiKoro
 					countOfWheat +=2;
 			
 				cardOwner.Money += countOfWheat;
-			 Singleton.reader.Speak(cardOwner.Name +" got "+countOfWheat+" coins from the bank.");
+			 Console.WriteLine(cardOwner.Name +" got "+countOfWheat+" coins from the bank.");
 			}
 	}
 	public class G12:GreenCard
@@ -187,7 +187,7 @@ namespace MachiKoro
 					countOfCups +=2;
 			
 				cardOwner.Money += countOfCups;
-				 Singleton.reader.Speak(cardOwner.Name +" got "+countOfCups+" coins from the bank.");
+				 Console.WriteLine(cardOwner.Name +" got "+countOfCups+" coins from the bank.");
 			}
 		}
 	} 

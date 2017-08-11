@@ -34,7 +34,7 @@ namespace MachiKoro
 				{
 					currentPlayer.Money -=3;
 					cardOwner.Money +=3;
-					 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "3 coins.");
+					 Console.WriteLine(currentPlayer.Name + "gave" + cardOwner.Name + "3 coins.");
 				}
 					
 			}
@@ -56,7 +56,7 @@ namespace MachiKoro
 		{	
 			currentPlayer.Money -= 1;
 			cardOwner.Money += 1;
-			 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
+			 Console.WriteLine(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
 		}
 	}
 	
@@ -75,7 +75,7 @@ namespace MachiKoro
 		{
 			currentPlayer.Money -=1;
 			cardOwner.Money +=1;
-			 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
+			 Console.WriteLine(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
 			
 		}
 	}
@@ -94,7 +94,7 @@ namespace MachiKoro
 		{
 			currentPlayer.Money -=1;
 			cardOwner.Money +=1;
-			 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
+			 Console.WriteLine(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
 		}
 	}			
 	public class R9:RedCard
@@ -112,7 +112,7 @@ namespace MachiKoro
 		{
 			currentPlayer.Money -=2;
 			cardOwner.Money +=2;
-			 Singleton.reader.Speak(currentPlayer.Name + "gave" + cardOwner.Name + "2 coins.");
+			 Console.WriteLine(currentPlayer.Name + "gave" + cardOwner.Name + "2 coins.");
 		}	
 			
 	}	

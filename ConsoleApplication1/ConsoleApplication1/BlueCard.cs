@@ -31,7 +31,7 @@ namespace MachiKoro
 		public override void  PayRule(Player currentPlayer, Player cardOwner)
 		{
 			cardOwner.Money += 1;
-			Singleton.reader.Speak(cardOwner.Name +" got 1 coin from the bank.");
+			Console.WriteLine(cardOwner.Name +" got 1 coin from the bank.");
 		}
 		
 	}
@@ -49,7 +49,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentPlayer, Player cardOwner)
 		{
 			cardOwner.Money +=1;
-			Singleton.reader.Speak(cardOwner.Name + "got 1 coin from the bank.");
+			Console.WriteLine(cardOwner.Name + "got 1 coin from the bank.");
 		}
 	}
 	
@@ -67,7 +67,7 @@ namespace MachiKoro
 			public override void PayRule(Player currentPlayer, Player cardOwner)
 		{	
 			cardOwner.Money +=1;
-			Singleton.reader.Speak(cardOwner.Name + "got 1 coin from the bank.");
+			Console.WriteLine(cardOwner.Name + "got 1 coin from the bank.");
 		}
 	}	
 	
@@ -84,7 +84,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentOwner, Player cardOwner)
 		{
 			cardOwner.Money +=1;
-			Singleton.reader.Speak(cardOwner + "got one coin from the bank.");
+			Console.WriteLine(cardOwner + "got one coin from the bank.");
 		}
 	}
 	
@@ -101,7 +101,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentPlayer, Player cardOwner)
 		{
 			cardOwner.Money +=3;
-			Singleton.reader.Speak(cardOwner + "got 3 coins from the bank.");
+			Console.WriteLine(cardOwner + "got 3 coins from the bank.");
 		}
 	}
 	
@@ -118,7 +118,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentPlayer, Player cardOwner)
 		{
 			cardOwner.Money +=5;
-			Singleton.reader.Speak("Yeah! " + cardOwner + "has a mine and earned 5 coins! Go " + cardOwner + "!!!");
+			Console.WriteLine("Yeah! " + cardOwner + "has a mine and earned 5 coins! Go " + cardOwner + "!!!");
 		}	
 	}
 	
@@ -135,7 +135,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentPlayer, Player cardOwner)
 		{
 			cardOwner.Money +=3;
-			Singleton.reader.Speak(cardOwner + "got 3 coins.");
+			Console.WriteLine(cardOwner + "got 3 coins.");
 		}
 	}
 	

@@ -36,24 +36,24 @@ namespace MachiKoro
 				Console.WriteLine(); // add a blank line
 			}
 			while(Players[currentPlayerIndex].LandmarkCount<7);
-            Singleton.reader.Speak(Players[currentPlayerIndex] +" won!");
+            Console.WriteLine(Players[currentPlayerIndex] +" won!");
 		}
 		
 		private void CurrentPlayerRoleADice()
 		{
 			int diceNumber = 0;
 			do{
-                Singleton.reader.Speak(Players[currentPlayerIndex].Name + ", please roll the dice, and type in the dice number");
+                Console.WriteLine(Players[currentPlayerIndex].Name + ", please roll the dice, and type in the dice number");
 			
 				if(!Int32.TryParse(Console.ReadLine(),out diceNumber))
-                    Singleton.reader.Speak("it's not a number!");	
+                    Console.WriteLine("it's not a number!");	
 				
 				if((Players[currentPlayerIndex].CanRole2Dices && diceNumber>12)
 					||
 					(!Players[currentPlayerIndex].CanRole2Dices && diceNumber>6)
 					)
 				{
-                    Singleton.reader.Speak("Cheater! you can't have rolled this number!");	
+                    Console.WriteLine("Cheater! you can't have rolled this number!");	
 					diceNumber= 0;
 				}
 			}
@@ -65,7 +65,7 @@ namespace MachiKoro
 					{
 						if(card is BlueCard && card.MatchNum.Contains(diceNumber))
 						{
-                            Singleton.reader.Speak(player.Name + " has a " + card.Name);
+                            Console.WriteLine(player.Name + " has a " + card.Name);
 							card.PayRule(Players[currentPlayerIndex],player);
 						}
 					}
@@ -76,7 +76,7 @@ namespace MachiKoro
 				{
 					if(card is GreenCard && card.MatchNum.Contains(diceNumber))
 					{
-                        Singleton.reader.Speak(Players[currentPlayerIndex].Name + " has a " + card.Name);
+                        Console.WriteLine(Players[currentPlayerIndex].Name + " has a " + card.Name);
 						card.PayRule(Players[currentPlayerIndex],Players[currentPlayerIndex]);
 					}
 				}
@@ -90,7 +90,7 @@ namespace MachiKoro
 					{
 						if(card is RedCard && card.MatchNum.Contains(diceNumber))
 						{
-                            Singleton.reader.Speak(player.Name + " has a " + card.Name);
+                            Console.WriteLine(player.Name + " has a " + card.Name);
 							card.PayRule(Players[currentPlayerIndex],player);
 						}
 					}
@@ -102,7 +102,7 @@ namespace MachiKoro
 				{
 					if(card is PurpleCard && card.MatchNum.Contains(diceNumber))
 					{
-                        Singleton.reader.Speak(Players[currentPlayerIndex].Name + " has a " + card.GetType().ToString());
+                        Console.WriteLine(Players[currentPlayerIndex].Name + " has a " + card.GetType().ToString());
 						card.PayRule(Players[currentPlayerIndex],Players[currentPlayerIndex]);
 					}
 				}
@@ -118,12 +118,12 @@ namespace MachiKoro
 				Type CardType;
 				do
 				{
-                    Singleton.reader.Speak(Players[currentPlayerIndex].Name + " please type in the card name that you want to buy:");
+                    Console.WriteLine(Players[currentPlayerIndex].Name + " please type in the card name that you want to buy:");
 					string cardtype = Console.ReadLine();
 					CardType = Type.GetType("MachiKoro."+ cardtype);
 					
 					if(CardType ==null)
-                        Singleton.reader.Speak(cardtype + " is not a valid card.");
+                        Console.WriteLine(cardtype + " is not a valid card.");
 				}
 				while (CardType ==null);
 				
@@ -137,7 +137,7 @@ namespace MachiKoro
 				}
 				else
 				{
-                    Singleton.reader.Speak(Players[currentPlayerIndex].Name+ ", You don't have enough money to buy this card.");
+                    Console.WriteLine(Players[currentPlayerIndex].Name+ ", You don't have enough money to buy this card.");
 				}
 			}
 			while(cardToBuy ==null);
@@ -158,7 +158,7 @@ namespace MachiKoro
 				Players.Add(onePlayer);
 			}
 
-            Singleton.reader.Speak("Let the game start!");
+            Console.WriteLine("Let the game start!");
 			
 			DisplayPlayer();
 		}

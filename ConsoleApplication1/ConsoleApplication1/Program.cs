@@ -10,7 +10,7 @@ namespace MachiKoro
         {
             
             List<string> playernames = new List<string>();
-            Singleton.reader.Speak("Who are the players?");
+            Console.WriteLine("Who are the players?");
             //Console.WriteLine("Who are the players?");
             string input;
             input = Console.ReadLine();
@@ -27,7 +27,7 @@ namespace MachiKoro
                 game.ResetGame();
                 game.Play();
 
-                Singleton.reader.Speak("Do you want to play another game?");
+                Console.WriteLine("Do you want to play another game?");
             }
             while (Console.ReadLine().ToLower() == "yes");
 
@@ -37,6 +37,7 @@ namespace MachiKoro
 
     }
 
+    /*
     static class Singleton
     {
         static SpeechSynthesizer _reader;
@@ -53,6 +54,7 @@ namespace MachiKoro
 
 
     }
+    */
 
 
   
