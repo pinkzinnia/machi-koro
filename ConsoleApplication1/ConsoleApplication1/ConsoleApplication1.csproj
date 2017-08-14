@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,11 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlueCard.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GreenCard.cs" />
+    <Compile Include="LandmarkCard.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurpleCard.cs" />
+    <Compile Include="RedCard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

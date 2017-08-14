@@ -17,7 +17,7 @@ namespace MachiKoro
 
         public SymbolType Symbol { get; set; }
 
-        public virtual void PayRule(Player currentPlayer, Player cardOwner){Console.WriteLine("no rule created yet.");}
+        public virtual void PayRule(Player currentPlayer, Player cardOwner, List<Player> players){Console.WriteLine("no rule created yet.");}
 		
 		public void Print()
 		{
@@ -27,8 +27,30 @@ namespace MachiKoro
 			Console.ForegroundColor=currentFontColor; // change it to the previouse font color
 		}
 		
+		public static Card FoundCardByName(List<Card> cards, string question)
+		{
+			Card cardFound = null;
+			do
+			{
+				Console.WriteLine(question);
+				string cardID = Console.ReadLine();
+				
+				foreach(Card card in cards)
+				{
+					if(card.GetType().ToString().Replace("MachiKoro.","") == cardID )
+					{
+						cardFound = card;
+						break;
+					} 
+				}
+			}
+			while(cardFound == null);
+			
+			return cardFound;
+		}
+		
     }
-	
+		
 	
 	
 	

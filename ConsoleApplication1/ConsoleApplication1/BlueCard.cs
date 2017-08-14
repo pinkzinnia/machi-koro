@@ -28,7 +28,7 @@ namespace MachiKoro
 			
 			
 		}
-		public override void  PayRule(Player currentPlayer, Player cardOwner)
+		public override void  PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money += 1;
 			Console.WriteLine(cardOwner.Name +" got 1 coin from the bank.");
@@ -46,7 +46,7 @@ namespace MachiKoro
 			Cost = 1;
 			Symbol = SymbolType.cow;
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=1;
 			Console.WriteLine(cardOwner.Name + "got 1 coin from the bank.");
@@ -64,7 +64,7 @@ namespace MachiKoro
 			Cost = 2;
 			Symbol = SymbolType.wheat;
 		}
-			public override void PayRule(Player currentPlayer, Player cardOwner)
+			public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{	
 			cardOwner.Money +=1;
 			Console.WriteLine(cardOwner.Name + "got 1 coin from the bank.");
@@ -81,7 +81,7 @@ namespace MachiKoro
 			Cost = 3;
 			Symbol = SymbolType.gear;
 		}
-		public override void PayRule(Player currentOwner, Player cardOwner)
+		public override void PayRule(Player currentOwner, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=1;
 			Console.WriteLine(cardOwner + "got one coin from the bank.");
@@ -98,7 +98,7 @@ namespace MachiKoro
 			Cost = 2;
 			Symbol = SymbolType.boat;
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=3;
 			Console.WriteLine(cardOwner + "got 3 coins from the bank.");
@@ -115,7 +115,7 @@ namespace MachiKoro
 			Cost = 6;
 			Symbol = SymbolType.gear;
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=5;
 			Console.WriteLine("Yeah! " + cardOwner + "has a mine and earned 5 coins! Go " + cardOwner + "!!!");
@@ -132,7 +132,7 @@ namespace MachiKoro
 			Cost = 3;
 			Symbol = SymbolType.wheat;
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=3;
 			Console.WriteLine(cardOwner + "got 3 coins.");
@@ -151,6 +151,14 @@ namespace MachiKoro
 			MatchNum.Add(14);
 			Cost = 5;
 			Symbol = SymbolType.boat;
+		}
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
+		{
+			Console.WriteLine("Please role two dice and type in the dice total");
+			int diceNumber; 
+			Int32.TryParse(Console.ReadLine(),out diceNumber);
+			cardOwner.Money += diceNumber;
+		
 		}
 	}
 }

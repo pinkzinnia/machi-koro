@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Speech.Synthesis;
+
 namespace MachiKoro
 {
     class Program
@@ -36,8 +36,7 @@ namespace MachiKoro
         }
 
     }
-
-    /*
+/*
     static class Singleton
     {
         static SpeechSynthesizer _reader;
@@ -54,8 +53,7 @@ namespace MachiKoro
 
 
     }
-    */
-
+*/
 
   
 }

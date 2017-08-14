@@ -13,7 +13,15 @@ namespace MachiKoro
 			Name = name;
 			LandmarkCount = 1;
 			Money = 3;
-			CanRole2Dices = false;
+			
+			CityHall= true;
+			TrainStation = false;
+			RadioTower = false;
+			AmusementPark = false;
+			ShoppingMall = false;
+			Airport = false;
+			Harbor = false;
+			
 			Cards = new List<Card>();
 			Cards.Add(new B1());
 			Cards.Add(new G2());
@@ -26,21 +34,61 @@ namespace MachiKoro
         public int Money { get; set; } 
 
         public List<Card> Cards { get; set; }
-
-        public bool CanRole2Dices { get; set; }
+		public bool CityHall {get; set;}
+        public bool TrainStation { get; set; }
+		public bool RadioTower {get;set;}
+		public bool AmusementPark {get;set;}
+		public bool ShoppingMall {get;set;}
+		public bool Airport {get; set;}
+		public bool Harbor {get;set;}
+		
 		
 		public void Print()
 		{
 			Console.WriteLine("Player Name: " + Name);
 			Console.WriteLine("Landmark Count: " + LandmarkCount);
 			Console.WriteLine("Money: " + Money);
-			Console.WriteLine("Can Role 2 Dices: " + CanRole2Dices);
 			Console.Write("Cards: ");
 			foreach(Card card in Cards)
 			{
 				card.Print();
 			}
 		
+		}
+		
+		public int CardsCount(string cardID)
+		{
+			int count = 0;
+			foreach(Card card in Cards)
+			{
+				if(card.GetType().ToString().Replace("MachiKoro.","") == cardID )
+				{
+					count += 1;
+					
+				} 
+			}
+			return count;
+		}
+		public static Player FoundPlayerByName(List<Player> players, string question)
+		{
+			Player playerFound = null;
+			do
+			{
+				Console.WriteLine(question);
+				string traderName = Console.ReadLine();
+				
+				foreach(Player player in players)
+				{
+					if(player.Name==traderName)
+					{
+						playerFound = player;
+						break;
+					} 
+				}
+			}
+			while(playerFound == null);
+			
+			return playerFound;
 		}
     }
 }

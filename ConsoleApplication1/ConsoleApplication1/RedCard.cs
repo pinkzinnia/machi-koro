@@ -25,15 +25,24 @@ namespace MachiKoro
 			Cost = 4;
 			Symbol = SymbolType.cup;	
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
+			
 			
 			foreach(Card card in cardOwner.Cards)
 			{
 				if(card is Y2)
 				{
-					currentPlayer.Money -=3;
-					cardOwner.Money +=3;
+					if(cardOwner.ShoppingMall)
+					{
+						currentPlayer.Money -=4;
+						cardOwner.Money +=4;
+					}
+					else
+					{
+						currentPlayer.Money -=3;
+						cardOwner.Money +=3;
+					}
 					 Console.WriteLine(currentPlayer.Name + "gave" + cardOwner.Name + "3 coins.");
 				}
 					
@@ -52,10 +61,19 @@ namespace MachiKoro
 			Cost = 2;
 			Symbol = SymbolType.cup;	
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{	
-			currentPlayer.Money -= 1;
-			cardOwner.Money += 1;
+			if(cardOwner.ShoppingMall)
+			{
+				currentPlayer.Money -=2;
+				cardOwner.Money +=2;
+			}
+			else
+			{
+				currentPlayer.Money -= 1;
+				cardOwner.Money += 1;
+			}
+			
 			 Console.WriteLine(currentPlayer.Name + "gave" + cardOwner.Name + "1 coins.");
 		}
 	}
@@ -71,7 +89,7 @@ namespace MachiKoro
 			Cost = 1;
 			Symbol = SymbolType.cup;	
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			currentPlayer.Money -=1;
 			cardOwner.Money +=1;
@@ -90,7 +108,7 @@ namespace MachiKoro
 			Cost = 1;
 			Symbol = SymbolType.cup;	
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			currentPlayer.Money -=1;
 			cardOwner.Money +=1;
@@ -108,7 +126,7 @@ namespace MachiKoro
 			Cost = 3;
 			Symbol = SymbolType.cup;	
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			currentPlayer.Money -=2;
 			cardOwner.Money +=2;

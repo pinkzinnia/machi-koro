@@ -65,11 +65,11 @@ namespace MachiKoro
 		
 	}
 	
-	public class Y33:LandmarkCard
+	public class Y30:LandmarkCard
 	{
-		public Y33():base()
+		public Y30():base()
 		{
-			Name = "Air Port";
+			Name = "Airport";
 				Cost = 30;	
 		}
 	}

@@ -29,7 +29,7 @@ namespace MachiKoro
 			
 			
 		}
-		public override void  PayRule(Player currentPlayer, Player cardOwner)
+		public override void  PayRule(Player currentPlayer, Player cardOwner, List<Player> players )
 		{
 			cardOwner.Money += 1;
             Console.WriteLine(cardOwner.Name +" got 1 coin from the bank.");
@@ -50,7 +50,7 @@ namespace MachiKoro
 			
 			
 		}
-		public override void  PayRule(Player currentPlayer, Player cardOwner)
+		public override void  PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money += 3;
 			 Console.WriteLine(cardOwner.Name +" got 3 coins from the bank.");
@@ -69,14 +69,14 @@ namespace MachiKoro
 			Cost = 1;
 			Symbol = SymbolType.bread;
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{	
 			int countOfFlowerOrchard =0;
 			
 			foreach(Card card in cardOwner.Cards)
 			{
 				if(card is B4)
-					countOfFlowerOrchard +=1;
+				{countOfFlowerOrchard +=1;}
 			
 				cardOwner.Money += countOfFlowerOrchard;
 			 Console.WriteLine(cardOwner.Name +" got "+countOfFlowerOrchard+" coin(s) from the bank.");
@@ -99,7 +99,7 @@ namespace MachiKoro
 			Cost = 5;
 			Symbol = SymbolType.factory;
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{	
 			int countOfCows =0;
 			
@@ -127,7 +127,7 @@ namespace MachiKoro
 			Cost = 3;
 			Symbol = SymbolType.factory;
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{	
 			int countOfGears =0;
 			
@@ -153,7 +153,7 @@ namespace MachiKoro
 			Cost = 2;
 			Symbol = SymbolType.apple;	
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{	
 			int countOfWheat=0;
 			
@@ -177,7 +177,7 @@ namespace MachiKoro
 			Cost = 2;
 			Symbol = SymbolType.factory;	
 		}
-		public override void PayRule(Player currentPlayer, Player cardOwner)
+		public override void PayRule(Player currentPlayer, Player cardOwner,List<Player> players)
 		{	
 			int countOfCups=0;
 			
