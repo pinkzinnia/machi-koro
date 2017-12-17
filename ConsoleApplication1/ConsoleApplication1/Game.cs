@@ -210,21 +210,27 @@ namespace MachiKoro
 			{
 				case "Y2":
 					Players[currentPlayerIndex].Harbor = true;
+					Players[currentPlayerIndex].LandmarkCount++;
 					break;
 				case "Y30":
 					Players[currentPlayerIndex].Airport = true;
+					Players[currentPlayerIndex].LandmarkCount++;
 					break;
 				case "Y10":
 					Players[currentPlayerIndex].ShoppingMall = true;
+					Players[currentPlayerIndex].LandmarkCount++;
 					break;
 				case "Y16":
 					Players[currentPlayerIndex].AmusementPark = true;
+					Players[currentPlayerIndex].LandmarkCount++;
 					break;
 				case "Y4":
 					Players[currentPlayerIndex].TrainStation = true;
+					Players[currentPlayerIndex].LandmarkCount++;
 					break;
 				case "Y22":
 					Players[currentPlayerIndex].RadioTower = true;
+					Players[currentPlayerIndex].LandmarkCount++;
 					break;
 				default:
 					break;
