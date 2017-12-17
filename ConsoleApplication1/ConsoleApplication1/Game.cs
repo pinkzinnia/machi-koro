@@ -8,7 +8,7 @@ namespace MachiKoro
 {
    public class Game
     {
-		int currentPlayerIndex {get { return round % 3; }}
+		int currentPlayerIndex {get { return round % PlayerNames.Count; }}
 		int round;
 		List<string> PlayerNames; 
         public Game (List<string> playerNames)
