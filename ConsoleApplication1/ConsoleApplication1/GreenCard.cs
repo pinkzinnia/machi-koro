@@ -76,12 +76,10 @@ namespace MachiKoro
 			foreach(Card card in cardOwner.Cards)
 			{
 				if(card is B4)
-				{countOfFlowerOrchard +=1;}
-			
-				cardOwner.Money += countOfFlowerOrchard;
-			 Console.WriteLine(cardOwner.Name +" got "+countOfFlowerOrchard+" coin(s) from the bank.");
+					{countOfFlowerOrchard +=1;}
 			}
-			
+			cardOwner.Money += countOfFlowerOrchard;
+			 Console.WriteLine(cardOwner.Name +" got "+countOfFlowerOrchard+" coin(s) from the bank.");
 			
 			
 			

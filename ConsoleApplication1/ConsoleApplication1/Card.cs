@@ -8,7 +8,16 @@ using System.Text;
 namespace MachiKoro
 {
     public enum SymbolType {cup, bread, gear, wheat, cow, boat, tower, apple, factory }
-    public  class  Card
+   
+	public class E:Card
+	{
+		public E():base()
+		{
+			
+			Cost = 0;
+		}
+	}
+	public  class  Card
     {
         public string Name { get; set; }
         public List<int> MatchNum { get; set; }

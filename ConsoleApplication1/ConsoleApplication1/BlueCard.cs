@@ -49,7 +49,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=1;
-			Console.WriteLine(cardOwner.Name + "got 1 coin from the bank.");
+			Console.WriteLine(cardOwner.Name + " got 1 coin from the bank.");
 		}
 	}
 	
@@ -67,7 +67,7 @@ namespace MachiKoro
 			public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{	
 			cardOwner.Money +=1;
-			Console.WriteLine(cardOwner.Name + "got 1 coin from the bank.");
+			Console.WriteLine(cardOwner.Name + " got 1 coin from the bank.");
 		}
 	}	
 	
@@ -84,7 +84,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentOwner, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=1;
-			Console.WriteLine(cardOwner + "got one coin from the bank.");
+			Console.WriteLine(cardOwner.Name + " got one coin from the bank.");
 		}
 	}
 	
@@ -101,7 +101,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=3;
-			Console.WriteLine(cardOwner + "got 3 coins from the bank.");
+			Console.WriteLine(cardOwner.Name + " got 3 coins from the bank.");
 		}
 	}
 	
@@ -118,7 +118,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=5;
-			Console.WriteLine("Yeah! " + cardOwner + "has a mine and earned 5 coins! Go " + cardOwner + "!!!");
+			Console.WriteLine("Yeah! " + cardOwner.Name + " has a mine and earned 5 coins! Go " + cardOwner.Name + "!!!");
 		}	
 	}
 	
@@ -135,7 +135,7 @@ namespace MachiKoro
 		public override void PayRule(Player currentPlayer, Player cardOwner, List<Player> players)
 		{
 			cardOwner.Money +=3;
-			Console.WriteLine(cardOwner + "got 3 coins.");
+			Console.WriteLine(cardOwner.Name + " got 3 coins.");
 		}
 	}
 	

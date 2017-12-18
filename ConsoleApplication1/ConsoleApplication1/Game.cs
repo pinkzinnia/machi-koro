@@ -85,8 +85,10 @@ namespace MachiKoro
 			//RadioTower
 			if(Players[currentPlayerIndex].RadioTower)
 			{
-				Console.WriteLine("Do you want to re-roll? Type 1 if yes, 0 if not.");
-				if(Convert.ToBoolean(Console.ReadLine()))
+				Console.WriteLine("Do you want to re-roll? Type yes or no.");
+				
+				
+				if(Console.ReadLine().ToLower().Trim() == "yes")
 				{
 					diceNumber = RollADice();
 				}
@@ -96,8 +98,8 @@ namespace MachiKoro
 			//AmusementPark
 			if(Players[currentPlayerIndex].AmusementPark && diceNumber % 2 == 0 )
 			{
-				Console.WriteLine("Did you roll doubles? Type 1 if yes, 0 if not.");
-				if(Convert.ToBoolean(Console.ReadLine()))
+				Console.WriteLine("Did you roll doubles? Type yes or no.");
+				if(Console.ReadLine().ToLower().Trim() == "yes")
 				{
 					diceNumber = RollADice();
 				}
@@ -106,8 +108,8 @@ namespace MachiKoro
 			
 			if(Players[currentPlayerIndex].Harbor && diceNumber >=10)
 			{
-				Console.WriteLine("Do you want to add 2 to the dice total? Type 1 if yes, 0 is no.");
-				if(Convert.ToBoolean(Console.ReadLine()))
+				Console.WriteLine("Do you want to add 2 to the dice total? Type yes or no.");
+				if(Console.ReadLine().ToLower().Trim() == "yes")
 				{
 					diceNumber +=2;
 				}
@@ -163,6 +165,8 @@ namespace MachiKoro
 						card.PayRule(Players[currentPlayerIndex],Players[currentPlayerIndex], Players);
 					}
 				}
+				
+				
 		}
 		
 		private void CurrentPlayerBuyACard()
@@ -180,7 +184,7 @@ namespace MachiKoro
 				Type CardType;
 				do
 				{
-                    Console.WriteLine(Players[currentPlayerIndex].Name + " please type in the card name that you want to buy:");
+                    Console.WriteLine(Players[currentPlayerIndex].Name + ", you have "+ Players[currentPlayerIndex].Money + "coins, please type in the card name that you want to buy:");
 					cardtype = Console.ReadLine();
 					CardType = Type.GetType("MachiKoro."+ cardtype);
 					
@@ -205,7 +209,8 @@ namespace MachiKoro
 			while(cardToBuy ==null);
 				
 			Players[currentPlayerIndex].Money = Players[currentPlayerIndex].Money - cardToBuy.Cost;
-			Players[currentPlayerIndex].Cards.Add(cardToBuy);
+			if(cardtype != "E")
+				Players[currentPlayerIndex].Cards.Add(cardToBuy);
 			switch(cardtype)
 			{
 				case "Y2":
