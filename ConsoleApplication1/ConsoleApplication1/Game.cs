@@ -184,7 +184,7 @@ namespace MachiKoro
 				Type CardType;
 				do
 				{
-                    Console.WriteLine(Players[currentPlayerIndex].Name + ", you have "+ Players[currentPlayerIndex].Money + "coins, please type in the card name that you want to buy:");
+                    Console.WriteLine(Players[currentPlayerIndex].Name + ", you have "+ Players[currentPlayerIndex].Money + " coins, please type in the card name that you want to buy:");
 					cardtype = Console.ReadLine();
 					CardType = Type.GetType("MachiKoro."+ cardtype);
 					
